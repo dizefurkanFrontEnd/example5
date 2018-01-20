@@ -45,14 +45,33 @@ header {
   top: 0;
   padding: 10px 0;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-  opacity: 0;
   font-family: 'Oswald', sans-serif;
   z-index: 1;
   background-color: rgba(255,255,255,.7);
-  animation-name: show;
-  animation-duration: 1s;
+  animation-name: open-header; 
+  animation-duration: 1s; 
+  animation-fill-mode: forwards;
+  transform-origin: top;
+  backface-visibility: visible !important;
+}
+
+/* HEADER SCROLL CLASS */
+header.off {
+  margin-top: 0; transition: .3s;
+  animation-name: close-header; 
+  animation-duration: 1s; 
   animation-fill-mode: forwards;
 }
+@keyframes open-header {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+
+@keyframes close-header {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+/* HEADER SCROLL CLASS*/
 
 @keyframes show {
   0% { opacity: 0; transform: translateY(-100%);}
