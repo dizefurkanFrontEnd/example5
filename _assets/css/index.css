@@ -63,6 +63,10 @@ header {
   width: 100%;
 }
 
+.header__logoLink {
+  display: inline-block;
+}
+
 .header__logo {
   width: 150px;
 }
